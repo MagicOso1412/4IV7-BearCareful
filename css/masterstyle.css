@@ -75,9 +75,6 @@ a{
     font-weight: bold;
 }
 
-.test{
-    margin-left: 10%;
-}
 
 .contenido{
     width: 80%;
@@ -88,4 +85,11 @@ a{
 
 .imagen{
     width: 50%;
+}
+
+.pregunta{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-25%,-75%);
 }
