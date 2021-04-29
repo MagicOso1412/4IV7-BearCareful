@@ -6,6 +6,7 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 
 :root{
     --moradoOscuro: #8C30F5;
+    --moradoHover: #8c30f5a6;
     --moradoMedio: #D6B1FF;
     --moradoLight: #F1E4FF;
     --azulOscuro: #2EC5CE;
@@ -28,6 +29,7 @@ body{
     display: flex;
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
+    background-color: var(--moradoLight);
 }
 
 .izquierda{
@@ -40,21 +42,37 @@ body{
 
 nav{
     width: 100%;
+    margin-bottom: 1rem;
+}
+
+a{
+    text-decoration: none;
 }
 
 .navegacionDerecha, .navegacionIzquierda{
-    margin: auto;
-    
+    margin: auto;  
+}
+
+.boton-principal{
+    background-color: var(--moradoOscuro);
+    color: white;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.boton-principal:hover{
+    background-color: var(--moradoHover);
 }
 
 footer{
     text-align: center;
-    background-color: var(--moradoOscuro);
+    background-color: var(--moradoMedio);
     padding: 1rem;
 }
 
 a{
     color: black;
+    font-weight: bold;
 }
 
 .test{
