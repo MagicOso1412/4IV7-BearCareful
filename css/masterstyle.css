@@ -1,0 +1,28 @@
+body{
+    margin: 0;
+}
+
+footer{
+    text-align: center;
+    background-color: aqua;
+    padding: 1rem;
+}
+
+a{
+    color: black;
+}
+
+.test{
+    margin-left: 10%;
+}
+
+.contenido{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.imagen{
+    width: 50%;
+}
