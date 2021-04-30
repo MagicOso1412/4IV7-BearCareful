@@ -111,10 +111,24 @@ a{
     width: 50%;
     display: flex;
 }
-input[type=text], input[type=email], input[type=submit]{
+input[type=text], input[type=email], input[type=submit], select{
     border-radius: .5rem;
     border: none;
     background-color: var(--moradoMedio);
+}
+
+input[type=radio]{
+    -webkit-appearance: none;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 100%;
+    width: 1rem;
+    height: 1rem;
+    border: solid var(--naranjaOscuro);
+}
+
+input[type=radio]:focus{
+    background-color: var(--rosaMedio);
 }
 
 @media (max-width:600px){
