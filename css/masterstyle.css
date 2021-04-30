@@ -24,12 +24,11 @@ body{
     font-family: 'Manrope', sans-serif;
 }
 
-.izquierda, .derecha, nav{
+.izquierda, .derecha, .formulario, nav{
     display: -webkit-flex;
     display: flex;
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
-    background-color: var(--moradoLight);
 }
 
 .izquierda{
@@ -43,6 +42,7 @@ body{
 nav{
     width: 100%;
     margin-bottom: 1rem;
+    background-color: var(--moradoLight);
 }
 
 a{
@@ -53,21 +53,11 @@ a{
     margin: auto;  
 }
 
-.boton-principal{
-    background-color: var(--moradoOscuro);
-    color: white;
-    border-radius: 1rem;
-    padding: 1rem;
-}
-
-.boton-principal:hover{
-    background-color: var(--moradoHover);
-}
-
 footer{
     text-align: center;
     background-color: var(--moradoMedio);
     padding: 1rem;
+    margin-top: 1rem;
 }
 
 a{
@@ -92,4 +82,43 @@ a{
     top: 50%;
     left: 50%;
     transform: translate(-25%,-75%);
+}
+
+[class|="boton"]{
+    border-radius: 1rem;
+    padding: 1rem;
+}
+.boton-principal{
+    background-color: var(--moradoOscuro);
+    color: white;
+}
+
+.boton-principal:hover{
+    background-color: var(--moradoHover);
+}
+
+.cuenta{
+    background-color: var(--moradoHover);
+    margin: auto;
+    width: fit-content;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.cuentaIzquierda{
+    width: 50%;
+}
+.cuentaDerecha{
+    width: 50%;
+    display: flex;
+}
+input[type=text], input[type=email], input[type=submit]{
+    border-radius: .5rem;
+    border: none;
+    background-color: var(--moradoMedio);
+}
+
+@media (max-width:600px){
+    .cuentaIzquierda, .cuentaDerecha{
+        width: 100%;
+    }
 }
