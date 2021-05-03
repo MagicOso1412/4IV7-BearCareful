@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/images/placeholder.jpeg">
     <link rel="stylesheet" href="css/masterstyle.css">
+    <script href="js/validacion.js"></script>
     <title>Bear Careful</title>
 </head>
 <body>
@@ -23,12 +24,12 @@
 
     <div class="cuenta">
         <h3>Registrarse</h3>
-        <form name="registro">
+        <form name="registro" onsubmit="return validacion(this)">
             Correo electrónico: <input type="text" name="inputCorreo">
             <br><br>
             Contraseña: <input type="email" name="inputContraseña">
             <br><br>
-            Nombre de Usuario: <input type="email" name="inputUsuario">
+            Nombre de Usuario: <input type="text" name="inputUsuario">
             <h3>Género:</h3>
             <input type="radio" name="inputSexo" value="1"> Masculino
             <br><br>
@@ -43,14 +44,17 @@
                 <option value="canada">Canadá</option>
             </select>
             <br><br>
-            <input type="submit" value="Registrarse">
+            <input type="submit" value="Registrarse" >
             <br><br>
         </form>
     </div>
 
 </body>
 <footer>
-    <p>Bear Tual</p>
+    <p><a href="index.html">Bear Tual</a></p>
+    <br>
+    <p><a href="Equipo.html">Equipo</a></p>
+    <br>
     <p>Derechos reservados</p>
 </footer>
 </html>
