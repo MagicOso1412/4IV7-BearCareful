@@ -24,7 +24,7 @@
 
     <div class="cuenta">
         <h3>Registrarse</h3>
-        <form name="registro" onsubmit="return validacion(this)">
+        <form name="registro" onsubmit="return validacion(this)" action="iniciarSesion.html">
             Correo electrónico: <input type="email" name="inputCorreo">
             <br><br>
             Contraseña: <input type="text" name="inputContraseña">
@@ -44,7 +44,7 @@
                 <option value="canada">Canadá</option>
             </select>
             <br><br>
-            <input type="submit" value="Registrarse" >
+            <input type="submit" class="boton-submit" value="Registrarse" >
             <br><br>
         </form>
     </div>
