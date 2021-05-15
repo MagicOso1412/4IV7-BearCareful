@@ -12,6 +12,7 @@ function validar(event){
     if(validacion1 == false | validacion2 == false | validacion3 == false | validacion4 == false){
         event.preventDefault();
     }
+    
 }
 
 function validacionTamaño(input1, input2, input3){
@@ -29,14 +30,14 @@ function validacionCaracteresEspeciales(input){
 }
 
 function validacionEspacios(input1, input2, input3){
-    if(/ /g.test(input1)==true|/ /g.test(input2)==true|/ /g.test(input3)==true){
+    if(/ /g.test(input1)==true | / /g.test(input2)==true | / /g.test(input3)==true){
         alert("No puedes usar espacios.")
         return false;
     }
 }
 
 function validacionTextoVacio(input1, input2, input3){
-    if(input1.replace(/ /g,"")==""|input2.replace(/ /g,"")==""|input3.replace(/ /g,"")==""){
+    if(input1.replace(/ /g,"")=="" | input2.replace(/ /g,"")=="" | input3.replace(/ /g,"")==""){
         alert("No puedes dejar campos vacios.")
         return false;
     }

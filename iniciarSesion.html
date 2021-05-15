@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/images/shortcut-icon.png">
     <link rel="stylesheet" href="css/masterstyle.css">
+    <script src="js/iniciarSesion.js"></script>
     <title>Bear Careful</title>
 </head>
 <body>
@@ -41,12 +42,16 @@
         <div class="cuentaIzquierda">
             <div class="cuenta">
                 <h3>Iniciar Sesión</h3>
-                <form name="incioSesion" action="index.html">
-                    Correo electrónico: <br><br><input type="email" name="inputCorreo">
+                <form name="incioSesion" action="realizarTest.html">
+                    Correo electrónico:
                     <br><br>
-                    Contraseña: <br><br><input type="text" name="inputContraseña">
+                    <input id="inputCorreo" type="email" name="inputCorreo">
                     <br><br>
-                    <input type="submit" class="boton" value="Iniciar Sesión">
+                    Contraseña:
+                    <br><br>
+                    <input id="inputContraseña" type="text" name="inputContraseña">
+                    <br><br>
+                    <input onclick="validar(event)" type="submit" class="boton" value="Iniciar Sesión">
                     <br><br>
                 </form>
             </div>
