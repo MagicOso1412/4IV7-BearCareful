@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/images/shortcut-icon.png">
     <link rel="stylesheet" href="css/masterstyle.css">
+    <script src="js/realizarTest.js"></script>
     <title>Bear Careful</title>
 </head>
 <body>
-    <form class="test" name="test">
+    <form class="test" name="test" action="resultado.html">
         <div id="fullPage">
             <div class="section s1">
                 <div class="contenedorPregunta-1">
@@ -350,7 +351,10 @@
                     <div class="textoTest">
                         <h2>¿Ya terminaste?</h2>
                         <br>
-                        <p><a href="resultado.html" class="boton-principal">Enviar Test</a></p>
+                        <p>
+                            <!--<a href="resultado.html" class="boton-principal">Enviar Test</a>-->
+                            <input onclick="validar(event)" type="submit" value="Enviar Test" style="font-weight: bold; border-radius: 1rem; padding: 1.1rem; background-color: var(--moradoOscuro); color: white;">
+                        </p>
                     </div>
                 </div>
             </div>
