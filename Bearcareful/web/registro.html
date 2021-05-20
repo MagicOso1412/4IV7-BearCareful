@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/shortcut-icon.png">
+    <link rel="stylesheet" href="css/masterstyle.css">
+    <script src="js/registro.js"></script>
+    <title>Bear Careful</title>
+</head>
+<body>
+
+    <nav>
+        <section class="izquierda">
+            <div class="navegacionIzquierda">
+                <h1>Bear Careful</h1>
+            </div>
+            <div class="navegacionIzquierda">
+                <img src="assets/images/icon.png" width="100rem" height="100rem">
+            </div>
+        </section>
+    </nav>
+
+    <div class="cuenta">
+        <h3>Registrarse</h3>
+        <form name="registro" action="iniciarSesion.html">
+            Correo electrónico: 
+            <input id="inputCorreo" type="email" name="inputCorreo">
+            <br><br>
+            Contraseña:
+            <input id="inputContraseña" type="text" name="inputContraseña">
+            <br><br>
+            Nombre de Usuario:
+            <input id="inputUsuario" type="text" name="inputUsuario">
+            <h3>Género:</h3>
+            <input id="inputGenero" type="radio" name="inputSexo" checked value="1"> Masculino
+            <br><br>
+            <input id="inputGenero" type="radio" name="inputSexo" value="2"> Femenino
+            <br><br>
+            <input id="inputGenero" type="radio" name="inputSexo" value="3"> Otro
+            <br><br>
+            Nacionalidad: 
+            <select id="inputNacionalidad" name="inputNacionalidad">
+                <option value="mexico" selected>México</option>
+                <option value="eu">Estados Unidos</option>
+                <option value="canada">Canadá</option>
+            </select>
+            <br><br>
+            <input onclick="validar(event)" type="submit" class="boton-submit" value="Registrarse" >
+            <br><br>
+        </form>
+    </div>
+
+</body>
+<footer>
+    <p><a href="index.html">Bear Tual</a></p>
+    <p></p><a href="Equipo.html">Equipo</a></p>
+    <p>Derechos reservados</p>
+</footer>
+</html>
