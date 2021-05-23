@@ -25,9 +25,30 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
     --opcionLogo: #aaccffff;
 }
 
+/* General */
+
 body{
     font-family: 'Manrope', sans-serif;
 }
+
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.contenido{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.imagen{
+    width: 50%;
+}
+
+/* Navegacion */
 
 .izquierda, .derecha, .formulario, nav{
     display: -webkit-flex;
@@ -50,13 +71,11 @@ nav{
     background-color: var(--moradoLight);
 }
 
-a{
-    text-decoration: none;
-}
-
 .navegacionDerecha, .navegacionIzquierda{
     margin: auto;  
 }
+
+/* Footer */
 
 footer{
     text-align: center;
@@ -65,22 +84,7 @@ footer{
     margin-top: 1rem;
 }
 
-a{
-    color: black;
-    font-weight: bold;
-}
-
-
-.contenido{
-    width: 80%;
-    margin: auto;
-    text-align: center;
-    padding-bottom: 1rem;
-}
-
-.imagen{
-    width: 50%;
-}
+/* Test */
 
 .pregunta{
     /*position: relative;
@@ -116,6 +120,8 @@ a{
     background-color: var(--colorPregunta2);
 }
 
+/* Botones */
+
 [class|="boton"]{
     border-radius: 1rem;
     padding: 1rem;
@@ -128,6 +134,8 @@ a{
 .boton-principal:hover{
     background-color: var(--moradoHover);
 }
+
+/* Cuenta */
 
 .cuenta{
     background-color: var(--moradoMedio);
@@ -143,6 +151,9 @@ a{
     width: 50%;
     display: flex;
 }
+
+/* Input */
+
 input[type=text], input[type=email], input[type=submit], select{
     border-radius: .5rem;
     border: none;
@@ -163,6 +174,8 @@ input[type=radio]{
 input[type=radio]:checked{
     background-color: var(--azulLight);
 }
+
+/* Responsive */
 
 @media (max-width:600px){
     .cuentaIzquierda, .cuentaDerecha{
