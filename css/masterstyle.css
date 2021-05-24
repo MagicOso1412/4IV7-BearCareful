@@ -262,10 +262,11 @@ footer{
 
 /* Input */
 
-input[type=text], input[type=email], input[type=submit], select{
+input[type=text], input[type=password],input[type=email], input[type=submit], select{
     border-radius: .5rem;
     border: none;
     background-color: var(--moradoLight);
+    text-align: center;
 }
 
 
