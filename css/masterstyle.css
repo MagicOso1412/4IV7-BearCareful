@@ -156,6 +156,7 @@ footer{
     padding-left: 20%;
     display: table-cell;
     vertical-align: middle;
+    margin: auto;
 }
 .textoTest{
     text-align: center;
@@ -205,14 +206,14 @@ footer{
 }
 
 @media(max-height:400px){
-    .textoTest{
+    .textoTest, .pregunta{
         padding-left: 10%;
         padding-right: 10%;
     }
 }
 
 @media(max-height:300px){
-    .textoTest{
+    .textoTest, .pregunta{
         padding-left: 1rem;
         padding-right: 1rem;
     }
@@ -220,7 +221,7 @@ footer{
 
 @media(max-height:250px){
     .textoTest{
-        font-size: .8rem;
+        font-size: .75rem;
     }
     .pregunta{
         font-size: .7rem;
@@ -287,10 +288,6 @@ input[type=radio]:checked{
 @media (max-width:890px){
     .cuentaIzquierda, .cuentaDerecha{
         width: 100%;
-    }
-    .pregunta{
-        padding-left: 1rem;
-        padding-right: 1rem;
     }
 }
 
