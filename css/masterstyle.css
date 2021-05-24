@@ -75,6 +75,71 @@ nav{
     margin: auto;  
 }
 
+.navegacionIzquierda{
+    margin-left: 2rem;
+    margin-right: 0;
+}
+
+/* Navegacion Responsive */
+
+.desplegable, .responsive, #menu{
+    display: none;
+    margin: 0;
+}
+
+#menu{
+    z-index: 3;
+    height: 0;
+    width: 0;
+}
+
+.desplegable{
+    width: 30%;
+    position: absolute;
+    top: 6.4rem;
+    right: 100%;
+    background-color: var(--moradoLight);
+}
+
+.a-nav{
+    margin: 0;
+    text-align: center;
+}
+
+@media(max-width:890px){
+    .normal{
+        display: none;
+    }
+    #menu{
+        display: inline;
+    }
+    .responsive{
+        display: inline-block;
+    }
+    .navegacionIzquierda{
+        margin-left: 0rem;
+        margin-right: 0;
+    }
+    .izquierda{
+        width: fit-content;
+        float: right;
+    }
+    .derecha{
+        width: fit-content;
+        float: left;
+    }
+    .desplegable{
+        display: flex;
+        flex-direction: column;
+        transition: all 1s;
+    }
+    #menu:focus ~ .desplegable{
+        z-index: 1;
+        right: 70%;
+        z-index: 2;
+    }
+}
+
 /* Footer */
 
 footer{

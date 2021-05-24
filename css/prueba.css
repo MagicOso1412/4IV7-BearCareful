@@ -29,7 +29,6 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 
 body{
     font-family: 'Manrope', sans-serif;
-    width: 100%;
 }
 
 a{
@@ -50,10 +49,6 @@ a{
 }
 
 /* Navegacion */
-
-.responsive{
-    display: none;
-}
 
 .izquierda, .derecha, .formulario, nav{
     display: -webkit-flex;
@@ -87,22 +82,23 @@ nav{
 
 /* Navegacion Responsive */
 
-.desplegable{
+.desplegable, .responsive, #menu{
     display: none;
+    margin: 0;
 }
 
 #menu{
-    width: 0;
+    z-index: 3;
     height: 0;
+    width: 0;
 }
 
-@keyframes desplegar {
-    from{
-        left: 100%;  
-    }
-    to{
-        left: 70%;
-    }
+.desplegable{
+    width: 30%;
+    position: absolute;
+    top: 6.4rem;
+    right: 100%;
+    background-color: var(--moradoLight);
 }
 
 .a-nav{
@@ -110,13 +106,15 @@ nav{
     text-align: center;
 }
 
-@media(max-width:880px){
+@media(max-width:890px){
     .normal{
         display: none;
     }
+    #menu{
+        display: inline;
+    }
     .responsive{
         display: inline-block;
-        margin: 0;
     }
     .navegacionIzquierda{
         margin-left: 0rem;
@@ -132,13 +130,7 @@ nav{
     }
     .desplegable{
         display: flex;
-        margin: 0;
-        width: 30%;
         flex-direction: column;
-        position: absolute;
-        top: 6.4rem;
-        right: 100%;
-        background-color: var(--moradoLight);
         transition: all 1s;
     }
     #menu:focus ~ .desplegable{
