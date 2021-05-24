@@ -131,7 +131,7 @@ nav{
     .desplegable{
         display: flex;
         flex-direction: column;
-        transition: all 1s;
+        transition: all .5s;
     }
     #menu:focus ~ .desplegable{
         z-index: 1;
@@ -152,14 +152,11 @@ footer{
 /* Test */
 
 .pregunta{
-    /*position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-25%,-75%);*/
-    padding: 0;
+    padding-right: 20%;
     padding-left: 20%;
     display: table-cell;
     vertical-align: middle;
+    margin: auto;
 }
 .textoTest{
     display: table-cell;
@@ -183,6 +180,33 @@ footer{
 
 .contenedorPregunta-2{
     background-color: var(--colorPregunta2);
+}
+
+/* Responsive Test */
+
+.radio{
+    width: 3rem;
+    margin: auto;
+    height: fit-content;
+}
+
+.respuesta{
+    width: 90%;
+    height: fit-content;
+}
+.opcion{
+    display: flex;
+}
+
+@media(max-width:890px){
+    .textoTest{
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+    .pregunta{
+        padding-left: 10%;
+        padding-right: 10%;
+    }
 }
 
 /* Botones */
@@ -246,8 +270,24 @@ input[type=radio]:checked{
     .cuentaIzquierda, .cuentaDerecha{
         width: 100%;
     }
-    .pregunta{
-        padding-left: 1rem;
-        padding-right: 1rem;
+}
+
+/* Registro Responsive */
+
+.br-responsive{
+    display: none;
+}
+
+@media(max-width:890px){
+    .br-responsive{
+        display: inline;
+    }
+}
+
+/* Responsive Graficas */
+
+@media(max-width:890px){
+    .grafica{
+        width: 100%;
     }
 }

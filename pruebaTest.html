@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/shortcut-icon.png">
+    <link rel="stylesheet" href="css/prueba.css">
+    <title>Bear Careful</title>
+</head>
+<body>
+    <form class="test" name="test" action="resultado.html">
+        <div id="fullPage">
+            <div class="section s1">
+                <div class="contenedorPregunta-1">
+                    <div class="textoTest">
+                        <h1>¿Tienes depresión?</h1>
+                        En este cuestionario aparecen varios grupos de afirmaciones.
+                        <br><br>
+                        Por favor, lea con atención cada una.
+                        <br><br>
+                        A continuación, señale cuál de las afirmaciones de
+                        cada grupo describe mejor cómo se ha sentido durante esta última semana,
+                        incluido en el día de hoy.
+                        <br><br>
+                        Asegúrese de leer todas las afirmaciones dentro de cada grupo antes de efectuar la elección.
+                    </div>
+                </div>
+            </div>
+            <div class="section s2">
+                <div class="contenedorPregunta-2">
+                    <div class="pregunta">
+                        <h2>1 - Tristeza </h2>
+                        <div class="opcion">
+                            <div class="radio">
+                                <input type="radio" name="input1" value="0">
+                            </div>
+                            <div class="respuesta">
+                                No me siento triste
+                            </div>
+                        </div>
+                        <br>
+                        <div class="opcion">
+                            <div class="radio">
+                                <input type="radio" name="input1" value="1">
+                            </div>
+                            <div class="respuesta">
+                                Me siento triste gran parte del tiempo
+                            </div>
+                        </div>
+                        <br>
+                        <div class="opcion">
+                            <div class="radio">
+                                <input type="radio" name="input1" value="2">
+                            </div>
+
+                            <div class="respuesta">
+                                Me siento triste todo el tiempo
+                            </div>
+                        </div>
+                        <br>
+                        <div class="opcion">
+                            <div class="radio">
+                                <input type="radio" name="input1" value="3">
+                            </div> 
+                            <div class="respuesta">
+                                Me siento tan triste o soy tan infeliz que no puedo soportarlo<br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section s23">
+                <div class="contenedorPregunta-1">
+                    <div class="textoTest">
+                        <h2>¿Ya terminaste?</h2>
+                        <br>
+                        <p>
+                            <!--<a href="resultado.html" class="boton-principal">Enviar Test</a>-->
+                            <input onclick="validar(event)" type="submit" value="Enviar Test" style="font-weight: bold; border-radius: 1rem; padding: 1.1rem; background-color: var(--moradoOscuro); color: white;">
+                        </p>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.min.js" integrity="sha512-HqbDsHIJoZ36Csd7NMupWFxC7e7aX2qm213sX+hirN+yEx/eUNlZrTWPs1dUQDEW4fMVkerv1PfMohR1WdFFJQ==" crossorigin="anonymous"></script>
+    <script>
+        new fullpage('#fullPage',{
+            autoScrolling: true
+        });
+    </script>
+</body>
+</html>
