@@ -204,6 +204,29 @@ footer{
     }
 }
 
+@media(max-height:400px){
+    .textoTest{
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+
+@media(max-height:300px){
+    .textoTest{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+@media(max-height:250px){
+    .textoTest{
+        font-size: .8rem;
+    }
+    .pregunta{
+        font-size: .7rem;
+    }
+}
+
 /* Botones */
 
 [class|="boton"]{
