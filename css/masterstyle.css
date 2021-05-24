@@ -131,7 +131,7 @@ nav{
     .desplegable{
         display: flex;
         flex-direction: column;
-        transition: all 1s;
+        transition: all .5s;
     }
     #menu:focus ~ .desplegable{
         z-index: 1;
@@ -261,5 +261,13 @@ input[type=radio]:checked{
 @media(max-width:890px){
     .br-responsive{
         display: inline;
+    }
+}
+
+/* Responsive Graficas */
+
+@media(max-width:890px){
+    .grafica{
+        width: 100%;
     }
 }
