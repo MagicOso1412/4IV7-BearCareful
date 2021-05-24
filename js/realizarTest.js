@@ -1,5 +1,7 @@
 
-var input = "";
+let input = "";
+let contador = 0;
+let validacion = true;
 
 // Esta funcion revisa si los radio button estan "checked", el bucle for se utiliza
 // para aprovechar que todos se llaman input+n
@@ -8,14 +10,21 @@ var input = "";
 
 function validar(event){
 
-    for (var i = 1; i < 22; i++) {
+    for (let i = 1; i < 22; i++) {
 
         input = document.querySelector('input[name="input'+ i +'"]:checked');
         
         if(input == null){
             alert("Debes responder todas las preguntas");
+            validacion = false;
             event.preventDefault();
             break;
         } 
+    }
+    if(validacion==true){
+        for (let i = 1; i < 22; i++){
+            contador += parseInt(document.querySelector('input[name="input'+ i +'"]:checked').value);
+        }
+        document.getElementById("resultado").value = contador;
     }
 }
