@@ -26,73 +26,58 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 }
 
 /* General */
-
 body{
     font-family: 'Manrope', sans-serif;
 }
-
 a{
     text-decoration: none;
     color: black;
     font-weight: bold;
 }
-
 .contenido{
     width: 80%;
     margin: auto;
     text-align: center;
     padding-bottom: 1rem;
 }
-
 .imagen{
     width: 50%;
 }
 
 /* Navegacion */
-
 .izquierda, .derecha, .formulario, nav{
     display: -webkit-flex;
     display: flex;
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
 }
-
 .izquierda{
     width: 40%;
 }
-
 .derecha{
     width: 60%;
 }
-
 nav{
     width: 100%;
     margin-bottom: 1rem;
     background-color: var(--moradoLight);
 }
-
 .navegacionDerecha, .navegacionIzquierda{
     margin: auto;  
 }
-
 .navegacionIzquierda{
     margin-left: 2rem;
     margin-right: 0;
 }
-
-/* Navegacion Responsive */
-
 .desplegable, .responsive, #menu{
     display: none;
     margin: 0;
 }
-
 #menu{
     z-index: 3;
     height: 0;
     width: 0;
 }
-
 .desplegable{
     width: 30%;
     position: absolute;
@@ -100,13 +85,112 @@ nav{
     right: 100%;
     background-color: var(--moradoLight);
 }
-
 .a-nav{
     margin: 0;
     text-align: center;
 }
 
+/* Footer */
+footer{
+    text-align: center;
+    background-color: var(--moradoLight);
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+/* Test */
+.pregunta, .textoTest{
+    padding-right: 20%;
+    padding-left: 20%;
+    display: table-cell;
+    vertical-align: middle;
+    margin: auto;
+}
+.textoTest{
+    text-align: center;
+}
+[class|="contenedorPregunta"]{
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+.contenedorPregunta-texto{
+    height: auto;
+}
+.contenedorPregunta-1{
+    background-color: var(--colorPregunta1);
+}
+.contenedorPregunta-2{
+    background-color: var(--colorPregunta2);
+}
+.radio{
+    width: 3rem;
+    margin: auto;
+    height: fit-content;
+}
+.respuesta{
+    width: 90%;
+    height: fit-content;
+}
+.opcion{
+    display: flex;
+}
+
+/* Botones */
+[class|="boton"]{
+    border-radius: 1rem;
+    padding: 1rem;
+}
+.boton-principal{
+    background-color: var(--moradoOscuro);
+    color: white;
+}
+.boton-principal:hover{
+    background-color: var(--moradoHover);
+}
+
+/* Cuenta */
+.cuenta{
+    background-color: var(--moradoMedio);
+    margin: auto;
+    width: fit-content;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.cuentaIzquierda{
+    width: 50%;
+}
+.cuentaDerecha{
+    width: 50%;
+    display: flex;
+}
+
+/* Input */
+input[type=text], input[type=password],input[type=email], input[type=submit], select{
+    border-radius: .5rem;
+    border: none;
+    background-color: var(--moradoLight);
+    text-align: center;
+}
+input[type=radio]{
+    -webkit-appearance: none;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 100%;
+    width: 1rem;
+    height: 1rem;
+    border: solid var(--azulOscuro);
+}
+input[type=radio]:checked{
+    background-color: var(--azulLight);
+}
+.br-responsive{
+    display: none;
+}
+
 @media(max-width:890px){
+    
+    /* Navegacion */
     .normal{
         display: none;
     }
@@ -138,63 +222,23 @@ nav{
         right: 70%;
         z-index: 2;
     }
-}
 
-/* Footer */
+    /* Graficas */
+    .grafica{
+        width: 100%;
+    }
 
-footer{
-    text-align: center;
-    background-color: var(--moradoLight);
-    padding: 1rem;
-    margin-top: 1rem;
-}
+    /* Registro */
+    .br-responsive{
+        display: inline;
+    }
 
-/* Test */
+    /* Iniciar Sesion */
+    .cuentaIzquierda, .cuentaDerecha{
+        width: 100%;
+    }
 
-.pregunta, .textoTest{
-    padding-right: 20%;
-    padding-left: 20%;
-    display: table-cell;
-    vertical-align: middle;
-    margin: auto;
-}
-.textoTest{
-    text-align: center;
-}
-
-[class|="contenedorPregunta"]{
-    width: 100%;
-    height: 100%;
-    display: table;
-}
-.contenedorPregunta-texto{
-    height: auto;
-}
-.contenedorPregunta-1{
-    background-color: var(--colorPregunta1);
-}
-
-.contenedorPregunta-2{
-    background-color: var(--colorPregunta2);
-}
-
-/* Responsive Test */
-
-.radio{
-    width: 3rem;
-    margin: auto;
-    height: fit-content;
-}
-
-.respuesta{
-    width: 90%;
-    height: fit-content;
-}
-.opcion{
-    display: flex;
-}
-
-@media(max-width:890px){
+    /* Test */
     .textoTest{
         padding-left: 15%;
         padding-right: 15%;
@@ -204,110 +248,23 @@ footer{
         padding-right: 10%;
     }
 }
-
 @media(max-height:400px){
     .textoTest, .pregunta{
         padding-left: 10%;
         padding-right: 10%;
     }
 }
-
 @media(max-height:300px){
     .textoTest, .pregunta{
         padding-left: 1rem;
         padding-right: 1rem;
     }
 }
-
 @media(max-height:250px){
     .textoTest{
         font-size: .75rem;
     }
     .pregunta{
         font-size: .7rem;
-    }
-}
-
-/* Botones */
-
-[class|="boton"]{
-    border-radius: 1rem;
-    padding: 1rem;
-}
-.boton-principal{
-    background-color: var(--moradoOscuro);
-    color: white;
-}
-
-.boton-principal:hover{
-    background-color: var(--moradoHover);
-}
-
-/* Cuenta */
-
-.cuenta{
-    background-color: var(--moradoMedio);
-    margin: auto;
-    width: fit-content;
-    padding: 1rem;
-    border-radius: 1rem;
-}
-.cuentaIzquierda{
-    width: 50%;
-}
-.cuentaDerecha{
-    width: 50%;
-    display: flex;
-}
-
-/* Input */
-
-input[type=text], input[type=password],input[type=email], input[type=submit], select{
-    border-radius: .5rem;
-    border: none;
-    background-color: var(--moradoLight);
-    text-align: center;
-}
-
-
-input[type=radio]{
-    -webkit-appearance: none;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    border-radius: 100%;
-    width: 1rem;
-    height: 1rem;
-    border: solid var(--azulOscuro);
-}
-
-input[type=radio]:checked{
-    background-color: var(--azulLight);
-}
-
-/* Responsive */
-
-@media (max-width:890px){
-    .cuentaIzquierda, .cuentaDerecha{
-        width: 100%;
-    }
-}
-
-/* Registro Responsive */
-
-.br-responsive{
-    display: none;
-}
-
-@media(max-width:890px){
-    .br-responsive{
-        display: inline;
-    }
-}
-
-/* Responsive Graficas */
-
-@media(max-width:890px){
-    .grafica{
-        width: 100%;
     }
 }
