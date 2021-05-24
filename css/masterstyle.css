@@ -251,3 +251,15 @@ input[type=radio]:checked{
         padding-right: 1rem;
     }
 }
+
+/* Registro Responsive */
+
+.br-responsive{
+    display: none;
+}
+
+@media(max-width:890px){
+    .br-responsive{
+        display: inline;
+    }
+}
