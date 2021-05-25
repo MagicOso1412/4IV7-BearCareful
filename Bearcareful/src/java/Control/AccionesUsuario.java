@@ -20,19 +20,18 @@ public class AccionesUsuario {
         int estatus = 0;
         try {
             Connection con = Conexion.getConnection();
-            String q = "insert into BearCareful(nom_user,nom_account,pass_user, email,id_user,id_country ,date_user) "
-                    + "values(?,?,?,?,?,?,?)";
+            String q = "insert into BearCareful(nom_user,pass_user, email,id_user,id_country ) "
+                    + "values(?,?,?,?,?)";
 
             PreparedStatement ps = con.prepareStatement(q);
 
             //usar getter and setter
             ps.setString(1, e.getNom_user());
-            ps.setString(2, e.getNom_account());
-            ps.setString(3, e.getPass_user());
-            ps.setString(4, e.getEmail());
-            ps.setInt(5, e.getId_user());
-            ps.setInt(6, e.getId_country());
-            ps.setDate(7, e.getDate_user());
+           ps.setString(2, e.getPass_user());
+            ps.setString(3, e.getEmail());
+            ps.setInt(4, e.getId_user());
+            ps.setInt(5, e.getId_country());
+            
 
             estatus = ps.executeUpdate();
             System.out.println("Registro Exitoso del Empleado");
@@ -50,16 +49,16 @@ public class AccionesUsuario {
         int estatus = 0;
         try {
             Connection con = Conexion.getConnection();
-            String q = "update BearCareful set nom_account=?,pass_user=?, email=?,id_country=? ,date_user=? ";
+            String q = "update BearCareful set nom_user=?,pass_user=?, email=?,id_country=?";
 
             PreparedStatement ps = con.prepareStatement(q);
 
             //usar getter and setter
-            ps.setString(1, e.getNom_account());
+            ps.setString(1, e.getNom_user());
             ps.setString(2, e.getPass_user());
             ps.setString(3, e.getEmail());
             ps.setInt(4, e.getId_country());
-            ps.setDate(5, e.getDate_user());
+            
 
             estatus = ps.executeUpdate();
             System.out.println("Actualizacion Exitosa del Empleado");
@@ -87,12 +86,12 @@ public class AccionesUsuario {
             if (rs.next()) {
 
                 e.setNom_user(rs.getString(1));
-                e.setNom_account(rs.getString(2));
+                
                 e.setPass_user(rs.getString(3));
                 e.setEmail(rs.getString(4));
                 e.setId_user(rs.getInt(5));
                 e.setId_country(rs.getInt(6));
-                e.setDate_user(rs.getDate(7));
+               
             }
 
             System.out.println("Empleado encontrado");

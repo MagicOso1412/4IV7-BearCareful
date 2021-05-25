@@ -13,8 +13,8 @@ import java.sql.Date;
  */
 public class Usuario {
     private int id_user, id_country;
-    private Date date_user;
-    private String nom_user, nom_account, pass_user, email ;
+
+    private String nom_user, pass_user, email ;
 
     public int getId_user() {
         return id_user;
@@ -32,14 +32,7 @@ public class Usuario {
         this.id_country = id_country;
     }
 
-    public Date getDate_user() {
-        return date_user;
-    }
-
-    public void setDate_user(Date date_user) {
-        this.date_user = date_user;
-    }
-
+   
     public String getNom_user() {
         return nom_user;
     }
@@ -48,13 +41,7 @@ public class Usuario {
         this.nom_user = nom_user;
     }
 
-    public String getNom_account() {
-        return nom_account;
-    }
-
-    public void setNom_account(String nom_account) {
-        this.nom_account = nom_account;
-    }
+   
 
     public String getPass_user() {
         return pass_user;
