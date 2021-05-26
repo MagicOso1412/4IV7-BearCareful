@@ -28,6 +28,8 @@ public class Pais {
     public void setNom_country(String nom_country) {
         this.nom_country = nom_country;
     }
+
+   
     
     
 }

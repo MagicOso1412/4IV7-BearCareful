@@ -21,24 +21,23 @@ public class AccionesTest {
         int estatus = 0;
         try {
             Connection con = Conexion.getConnection();
-            String q = "insert into BearCareful(id_test,id_user,date_test,score_test,Scale_depre) "
-                    + "values(?,?,?,?,?)";
+            String q = "insert into MTest(id_usu, id_esc, fec, res) "
+                    + "values(?,?,?,?)";
 
             PreparedStatement ps = con.prepareStatement(q);
 
             //usar getter and setter
-            ps.setInt(1, e.getId_test());
-            ps.setInt(2, e.getId_user());
-            ps.setDate(3, e.getDate_test());
+            ps.setInt(1, e.getId_user());
+            ps.setInt(2, e.getId_escala());
+            ps.setString(3, e.getDate_test());
             ps.setInt(4, e.getScore_test());
-            ps.setString(5, e.getScale_depre());
            
             estatus = ps.executeUpdate();
-            System.out.println("Registro Exitoso del Test");
+            System.out.println("Registro Exitoso");
             con.close();
 
         } catch (Exception ed) {
-            System.out.println("Error al registrar al Test");
+            System.out.println("Error al registrar");
             System.out.println(ed.getMessage());
 
         }
@@ -47,11 +46,11 @@ public class AccionesTest {
 
    
 
-    public static Test buscarTestById(int id) {
+    public static Test buscarTestByIdUsuario(int id) {
         Test e = new Test();
         try {
             Connection con = Conexion.getConnection();
-            String q = "select * from Bearcareful where id_test = ?";
+            String q = "select * from MTest where id_usu = ?";
 
             PreparedStatement ps = con.prepareStatement(q);
 
@@ -59,13 +58,11 @@ public class AccionesTest {
 
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-
-               ;
                 
-            e.setId_test(rs.getInt(5));
-            e.setId_user(rs.getInt(5));
-            e.setDate_test(rs.getDate(5));
-            e.setScore_test(rs.getInt(5));
+            e.setId_test(rs.getInt(1));
+            e.setId_user(rs.getInt(2));
+            e.setDate_test(rs.getString(3));
+            e.setScore_test(rs.getInt(4));
             e.setScale_depre(rs.getString(5));
             }
 

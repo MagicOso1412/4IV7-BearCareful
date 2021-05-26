@@ -12,7 +12,9 @@ import java.sql.Date;
  * @author EMOA1
  */
 public class Test {
-
+        private int id_test, id_user, score_test, id_escala;
+        private String Scale_depre;
+        private String date_test;
     /**
      * @return the id_test
      */
@@ -72,18 +74,25 @@ public class Test {
     /**
      * @return the date_test
      */
-    public Date getDate_test() {
+    public String getDate_test() {
         return date_test;
     }
 
     /**
      * @param date_test the date_test to set
      */
-    public void setDate_test(Date date_test) {
+    public void setDate_test(String date_test) {
         this.date_test = date_test;
     }
-    private int id_test, id_user, score_test;
-    private String Scale_depre;
-    private Date date_test;
+    
+
+    public int getId_escala() {
+        return id_escala;
+    }
+
+    public void setId_escala(int id_escala) {
+        this.id_escala = id_escala;
+    }
+    
     
 }

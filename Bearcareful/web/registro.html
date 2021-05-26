@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/images/shortcut-icon.png">
     <link rel="stylesheet" href="css/masterstyle.css">
-    <script src="js/registro.js"></script>
+   <!-- <script src="js/registro.js"></script> -->
     <title>Bear Careful</title>
 </head>
 <body>
@@ -45,35 +45,29 @@
     <br class="br-responsive">
     <div class="cuenta">
         <h3>Registrarse</h3>
-        <form name="registro" action="iniciarSesion.html">
+        <form method="post" name="registro" action="guardarUsuario">
             Correo electrónico:
             <br class="br-responsive">
             <br class="br-responsive">
-            <input id="inputCorreo" type="email" name="inputCorreo" placeholder="Correo">
+            <input id="inputCorreo" type="email" name="correo" placeholder="Correo">
             <br><br>
             Contraseña:
             <br class="br-responsive">
             <br class="br-responsive">
-            <input id="inputContraseña" type="text" name="inputContraseña" placeholder="Contraseña">
+            <input id="inputContraseña" type="text" name="contra" placeholder="Contraseña">
             <br><br>
             Nombre de Usuario:
             <br class="br-responsive">
             <br class="br-responsive">
-            <input id="inputUsuario" type="text" name="inputUsuario" placeholder="Nombre de Usuario">
-            <h3>Género:</h3>
-            <input id="inputGenero" type="radio" name="inputSexo" checked value="1"> Masculino
-            <br><br>
-            <input id="inputGenero" type="radio" name="inputSexo" value="2"> Femenino
-            <br><br>
-            <input id="inputGenero" type="radio" name="inputSexo" value="3"> Otro
+            <input id="inputUsuario" type="text" name="nombre" placeholder="Nombre de Usuario">
             <br><br>
             Nacionalidad:
             <br class="br-responsive">
             <br class="br-responsive"> 
-            <select id="inputNacionalidad" name="inputNacionalidad">
-                <option value="mexico" selected>México</option>
-                <option value="eu">Estados Unidos</option>
-                <option value="canada">Canadá</option>
+            <select id="inputNacionalidad" name="pais">
+                <option value="1" selected>México</option>
+                <option value="2">Estados Unidos</option>
+                <option value="3">Canadá</option>
             </select>
             <br><br>
             <input onclick="validar(event)" type="submit" class="boton-submit" value="Registrarse" >

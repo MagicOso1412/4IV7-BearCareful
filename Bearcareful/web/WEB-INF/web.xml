@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>actualizarUsuario</servlet-name>
+        <servlet-class>Servlets.actualizarUsuario</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>guardarTest</servlet-name>
+        <servlet-class>Servlets.guardarTest</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>guardarUsuario</servlet-name>
+        <servlet-class>Servlets.guardarUsuario</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>actualizarUsuario</servlet-name>
+        <url-pattern>/actualizarUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>guardarTest</servlet-name>
+        <url-pattern>/guardarTest</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>guardarUsuario</servlet-name>
+        <url-pattern>/guardarUsuario</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>

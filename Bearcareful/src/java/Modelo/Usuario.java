@@ -5,7 +5,8 @@
  */
 package Modelo;
 
-import java.sql.Date;
+import Control.Conexion;
+import java.sql.*;
 
 /**
  *
@@ -14,7 +15,57 @@ import java.sql.Date;
 public class Usuario {
     private int id_user, id_country;
 
-    private String nom_user, pass_user, email ;
+    private String nom_user, pass_user;
+    
+   
+    private String  email;
+    
+    public Usuario verificarUsuario(String user, String pass) throws ClassNotFoundException{
+        Usuario u = null;
+        Pais pais = null;
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try{
+            con = Conexion.getConnection();
+            String q = "select * from MUsuario "
+                    + "where cor_usu = ? AND con_usu = ?";
+            
+            ps = con.prepareStatement(q);
+            
+            ps.setString(1, email);
+            ps.setString(2, pass_user);
+            
+            rs = ps.executeQuery();
+            
+            while(rs.next()){
+                u = new Usuario();
+                u.setId_user(rs.getInt("id_usu"));
+                u.setId_country(rs.getInt("id_pais"));
+                pais.setNom_country("nom_pais");
+                u.setNom_user(rs.getString("nom_usu"));
+                u.setPass_user(rs.getString("con_usu"));
+                u.setEmail(rs.getString("cor_usu"));
+                break;
+                
+            }
+        
+        }catch(SQLException sq){
+            System.out.println("Error al verificar al usuario");
+            System.out.println(sq.getMessage());
+            u = null;
+        }finally{
+            try{
+                rs.close();
+                ps.close();
+                con.close();
+            }catch(Exception e){
+                System.out.println("Error al desconectar la BD");
+                System.out.println(e.getMessage());
+            }
+        }
+        return u;
+    }
 
     public int getId_user() {
         return id_user;
