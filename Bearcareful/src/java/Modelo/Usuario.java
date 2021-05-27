@@ -22,7 +22,6 @@ public class Usuario {
     
     public Usuario verificarUsuario(String user, String pass) throws ClassNotFoundException{
         Usuario u = null;
-        Pais pais = null;
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -42,7 +41,7 @@ public class Usuario {
                 u = new Usuario();
                 u.setId_user(rs.getInt("id_usu"));
                 u.setId_country(rs.getInt("id_pais"));
-                pais.setNom_country("nom_pais");
+//                pais.setNom_country("nom_pais");
                 u.setNom_user(rs.getString("nom_usu"));
                 u.setPass_user(rs.getString("con_usu"));
                 u.setEmail(rs.getString("cor_usu"));

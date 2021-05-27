@@ -37,7 +37,7 @@ public class guardarUsuario extends HttpServlet {
             int id_country;
             String nom_user, pass_user, email;
 
-            id_country = Integer.parseInt(request.getParameter("pais"));
+            id_country = Integer.parseInt(request.getParameter("p"));
             nom_user = request.getParameter("nombre");
             pass_user = request.getParameter("contra");
             email = request.getParameter("correo");
@@ -50,14 +50,14 @@ public class guardarUsuario extends HttpServlet {
 
 //            if (validarComillas == false && validarTexto == false && validarCorreo == true) {
 
-                Usuario U = new Usuario();
+                Usuario e = new Usuario();
 
-                U.setId_country(id_country);
-                U.setNom_user(nom_user);
-                U.setPass_user(pass_user);
-                U.setEmail(email);
+                e.setId_country(id_country);
+                e.setNom_user(nom_user);
+                e.setPass_user(pass_user);
+                e.setEmail(email);
 
-                int estatus = AccionesUsuario.registrarUsuario(U);
+                int estatus = AccionesUsuario.registrarUsuario(e);
 
                 if (estatus > 0) {
                     response.sendRedirect("index-usuario.jsp");

@@ -36,59 +36,65 @@ public class guardarTest extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-           int  id_user, score_test, id_escala = 0;
+            int id_user, score_test, id_escala = 0;
             String date_test;
             java.util.Date date = new java.util.Date();
-            
-            
-            
-            id_user  = Integer.parseInt(request.getParameter("id"));
-            score_test  = Integer.parseInt(request.getParameter("puntaje"));
+
+            id_user = Integer.parseInt(request.getParameter("id"));
+
             //obtenemos la fecha del sistema
             DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
             date_test = dateFormat.format(date);
-            //obtenemos la escala
+            int i, sumatoria = 0;
             
-             if ( score_test >= 1 && score_test <= 10) {
-                 id_escala = 1;
-             } else {
-                  if ( score_test >= 11 && score_test <= 16) {
-                 id_escala = 2;
+            //Obtenemos el puntaje
+            for (i = 1; i < 22; i++) {
+
+                int input = Integer.parseInt(request.getParameter("input"+ i));
+                sumatoria += input;
+            } 
+            
+            score_test = sumatoria;
+            //obtenemos la escala
+            if (score_test >= 1 && score_test <= 10) {
+                id_escala = 1;
+            } else {
+                if (score_test >= 11 && score_test <= 16) {
+                    id_escala = 2;
                 } else {
-                     if ( score_test >= 17 && score_test <= 20) {
-                    id_escala = 3;
-                     } else {
-                          if ( score_test >= 21 && score_test <= 30) {
+                    if (score_test >= 17 && score_test <= 20) {
+                        id_escala = 3;
+                    } else {
+                        if (score_test >= 21 && score_test <= 30) {
                             id_escala = 4;
+                        } else {
+                            if (score_test >= 31 && score_test <= 40) {
+                                id_escala = 5;
                             } else {
-                             if ( score_test >= 31 && score_test <= 40) {
-                            id_escala = 5;
-                            } else {
-                                    if ( score_test >= 41) {
-                                     id_escala = 6;
-                                    } else {
-                                        System.out.println("Ninguna escala es valida");
-                                        response.sendRedirect("error.jsp");
-                                 }
-                             }
-                       }
+                                if (score_test >= 41) {
+                                    id_escala = 6;
+                                } else {
+                                    System.out.println("Ninguna escala es valida");
+                                    response.sendRedirect("error.jsp");
+                                }
+                            }
+                        }
                     }
                 }
             }
-            
-             
-             Test t = new Test();
-             
-             t.setId_user(id_user);
-             t.setId_escala(id_escala);
-             t.setDate_test(date_test);
-             t.setScore_test(score_test);
-             
-             int estatus = AccionesTest.registrarTest(t);
-            
-            if(estatus > 0){
+
+            Test t = new Test();
+
+            t.setId_user(id_user);
+            t.setId_escala(id_escala);
+            t.setDate_test(date_test);
+            t.setScore_test(score_test);
+
+            int estatus = AccionesTest.registrarTest(t);
+
+            if (estatus > 0) {
                 response.sendRedirect("index.jsp");
-            }else{
+            } else {
                 response.sendRedirect("error.jsp");
             }
         }

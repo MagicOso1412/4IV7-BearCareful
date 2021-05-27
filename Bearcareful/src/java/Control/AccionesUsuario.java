@@ -20,25 +20,22 @@ public class AccionesUsuario {
         int estatus = 0;
         try {
             Connection con = Conexion.getConnection();
-            String q = "insert into MUsuario(id_pais ,nom_usu, con_usu, cor_usu) "
-                    + "values(?,?,?,?)";
+            String q = " insert into musuario(id_pais, nom_usu, con_usu, cor_usu) values (?,?,?,?)";
 
             PreparedStatement ps = con.prepareStatement(q);
 
             //usar getter and setter
             ps.setInt(1, e.getId_country());
             ps.setString(2, e.getNom_user());
-           ps.setString(3, e.getPass_user());
+            ps.setString(3, e.getPass_user());
             ps.setString(4, e.getEmail());
-            
-            
 
             estatus = ps.executeUpdate();
             System.out.println("Registro Exitoso");
             con.close();
 
         } catch (Exception ed) {
-            System.out.println("Error al registrar");
+            System.out.println("Error al registrar usu");
             System.out.println(ed.getMessage());
 
         }
@@ -54,12 +51,11 @@ public class AccionesUsuario {
             PreparedStatement ps = con.prepareStatement(q);
 
             //usar getter and setter
-           ps.setInt(1, e.getId_country());
+            ps.setInt(1, e.getId_country());
             ps.setString(2, e.getNom_user());
-           ps.setString(3, e.getPass_user());
+            ps.setString(3, e.getPass_user());
             ps.setString(4, e.getEmail());
             ps.setInt(5, e.getId_user());
-            
 
             estatus = ps.executeUpdate();
             System.out.println("Actualizacion Exitosa");
@@ -85,15 +81,13 @@ public class AccionesUsuario {
 
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-                
+
                 e.setId_user(rs.getInt(1));
                 e.setId_country(rs.getInt(2));
                 e.setNom_user(rs.getString(3));
                 e.setPass_user(rs.getString(4));
                 e.setEmail(rs.getString(5));
-                
-                
-               
+
             }
 
             System.out.println("Usuario encontrado");
