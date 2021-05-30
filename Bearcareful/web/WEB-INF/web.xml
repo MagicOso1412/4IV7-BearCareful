@@ -12,6 +12,10 @@
         <servlet-name>guardarUsuario</servlet-name>
         <servlet-class>Servlets.guardarUsuario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CerrarSesion</servlet-name>
+        <servlet-class>Servlets.CerrarSesion</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>actualizarUsuario</servlet-name>
         <url-pattern>/actualizarUsuario</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>guardarUsuario</servlet-name>
         <url-pattern>/guardarUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CerrarSesion</servlet-name>
+        <url-pattern>/CerrarSesion</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

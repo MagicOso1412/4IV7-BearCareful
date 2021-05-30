@@ -5,12 +5,8 @@
  */
 package Servlets;
 
-import Control.AccionesUsuario;
-import Modelo.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,9 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Oso
+ * @author EMOA1
  */
-public class guardarUsuario extends HttpServlet {
+public class CerrarSesion extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,42 +28,19 @@ public class guardarUsuario extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, ClassNotFoundException {
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            int id_country;
-            String nom_user, pass_user, email;
-
-            id_country = Integer.parseInt(request.getParameter("p"));
-            nom_user = request.getParameter("nombre");
-            pass_user = request.getParameter("contra");
-            email = request.getParameter("correo");
-
-//            boolean validarComillas = Validacion.comilla(id_country + nom_user + pass_user + email);
-////         boolean validarEdad = Validacion.numero(id_country);
-//            boolean validarTexto = Validacion.texto(nom_user + pass_user + email);
-//            boolean validarCorreo = Validacion.correo(email);
-////         boolean validarEdad2 = Validacion.edad(edad);
-//            if (validarComillas == false && validarTexto == false && validarCorreo == true) {
-                Usuario e = new Usuario();
-                e.setId_country(id_country);
-                e.setNom_user(nom_user);
-                e.setPass_user(pass_user);
-                e.setEmail(email);
-
-                int estatus = AccionesUsuario.registrarUsuario(e);
-
-                if (estatus > 0) {
-                    response.sendRedirect("index-usuario.jsp");
-                } else {
-                    response.sendRedirect("errorUsu.jsp");
-                }
-
-//            }else {
-//                response.sendRedirect("error.jsp");
-//
-            
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet CerrarSesion</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet CerrarSesion at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
     }
 
@@ -83,11 +56,7 @@ public class guardarUsuario extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(guardarUsuario.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
     /**
@@ -101,11 +70,7 @@ public class guardarUsuario extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(guardarUsuario.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
     /**
