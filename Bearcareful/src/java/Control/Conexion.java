@@ -18,7 +18,7 @@ public class Conexion {
         
         url = "jdbc:mysql://localhost/bearcareful";
         userName = "root";
-        password = "Edgar777";
+        password = "Cruzazul55";
         
         Connection con = null;
         
