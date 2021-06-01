@@ -5,6 +5,22 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    String usuario = "";
+    int idusuario ;
+    HttpSession sesionusu = request.getSession();
+    if(sesionusu.getAttribute("usuario")==null){
+    %>
+
+    <jsp:forward page="index.html">
+        <jsp:param name="Error" value="Es obligatorio identificarse" />
+    </jsp:forward>
+
+    <%
+    }else{
+        usuario = (String)sesionusu.getAttribute("usuario");
+    }
+    %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,7 +103,7 @@
 <footer>
     <p><a href="index.html">Bear Tual</a></p>
     <p><a class="equipo" href="Equipo.html">Equipo</a></p>
-    <p><a>Cerrar Sesion</a></p>
+    <p><a href="CerrarSesion">Cerrar Sesion</a></p>
     <p> © Derechos reservados</p>
 </footer>
 </html>
