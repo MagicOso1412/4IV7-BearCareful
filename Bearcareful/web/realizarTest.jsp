@@ -1,4 +1,21 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    String usuario = "";
+    int idusuario =0;
+    HttpSession sesionusu = request.getSession();
+    if(sesionusu.getAttribute("usuario")==null){
+    %>
 
+    <jsp:forward page="index.html">
+        <jsp:param name="Error" value="Es obligatorio identificarse" />
+    </jsp:forward>
+
+    <%
+    }else{
+        usuario = (String)sesionusu.getAttribute("usuario");
+        idusuario=(Integer)sesionusu.getAttribute("id");
+    }
+    %>
 <!DOCTYPE html>
 <html lang="en">
 <head>

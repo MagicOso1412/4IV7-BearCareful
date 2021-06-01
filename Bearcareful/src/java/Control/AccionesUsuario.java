@@ -68,7 +68,7 @@ public class AccionesUsuario {
         }
         return estatus;
     }
-
+     
     public static Usuario buscarUsuarioById(int id) {
         Usuario e = new Usuario();
         try {
@@ -99,5 +99,35 @@ public class AccionesUsuario {
 
         }
         return e;
+        
+    }
+     public static int obtenerId(String correo) {
+        Usuario e = new Usuario();
+        int Idregreso = 0;
+        try {
+            Connection con = Conexion.getConnection();
+            String q = "select id_usu from MUsuario where cor_usu = ?";
+
+            PreparedStatement ps = con.prepareStatement(q);
+
+            ps.setString(1, correo);
+
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+
+                e.setId_user(rs.getInt(1));
+                Idregreso =e.getId_user();
+            }
+            
+            System.out.println("Usuario encontrado");
+            con.close();
+
+        } catch (Exception ed) {
+            System.out.println("Error al buscar al usuario");
+            System.out.println(ed.getMessage());
+
+        }
+        return Idregreso;
+        
     }
 }

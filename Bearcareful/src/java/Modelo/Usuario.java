@@ -20,7 +20,7 @@ public class Usuario {
    
     private String  email;
     
-    public Usuario verificarUsuario(String user, String pass) throws ClassNotFoundException{
+    public Usuario verificarUsuario(String email, String pass_user) throws ClassNotFoundException{
         Usuario u = null;
         Connection con = null;
         PreparedStatement ps = null;
@@ -29,14 +29,14 @@ public class Usuario {
             con = Conexion.getConnection();
             String q = "select * from MUsuario "
                     + "where cor_usu = ? AND con_usu = ?";
-            
+
             ps = con.prepareStatement(q);
-            
+
             ps.setString(1, email);
             ps.setString(2, pass_user);
-            
+
             rs = ps.executeQuery();
-            
+
             while(rs.next()){
                 u = new Usuario();
                 u.setId_user(rs.getInt("id_usu"));
@@ -46,9 +46,9 @@ public class Usuario {
                 u.setPass_user(rs.getString("con_usu"));
                 u.setEmail(rs.getString("cor_usu"));
                 break;
-                
+
             }
-        
+
         }catch(SQLException sq){
             System.out.println("Error al verificar al usuario");
             System.out.println(sq.getMessage());

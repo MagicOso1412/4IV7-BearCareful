@@ -16,6 +16,10 @@
         <servlet-name>CerrarSesion</servlet-name>
         <servlet-class>Servlets.CerrarSesion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ValidarUsuario</servlet-name>
+        <servlet-class>Servlets.ValidarUsuario</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>actualizarUsuario</servlet-name>
         <url-pattern>/actualizarUsuario</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>CerrarSesion</servlet-name>
         <url-pattern>/CerrarSesion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ValidarUsuario</servlet-name>
+        <url-pattern>/ValidarUsuario</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

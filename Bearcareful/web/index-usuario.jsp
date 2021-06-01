@@ -55,7 +55,7 @@
                 <a class= "boton-secundario" href="perfil.html">Perfil</a>
             </div>
             <div class="navegacionDerecha">
-                <a class= "boton-principal" href="realizarTest.html">Realizar Test</a>
+                <a class= "boton-principal" href="realizarTest.jsp">Realizar Test</a>
             </div>
         </div>
     </nav>
@@ -111,7 +111,7 @@
     <div class="contenido">
         <p><a href="predicciones.html" class="boton-principal">Consultar Estadísticas</a></p>
         <br>
-        <p><a href="realizarTest.html" class="boton-principal">Realizar Test</a></p>
+        <p><a href="realizarTest.jsp" class="boton-principal">Realizar Test</a></p>
         <img class="imagen" src="assets/images/icon.png">
     </div>
 

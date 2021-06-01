@@ -5,12 +5,9 @@
  */
 package Servlets;
 
-import Control.AccionesUsuario;
 import Modelo.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Date;
-import java.util.Enumeration;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -21,9 +18,9 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Oso
+ * @author EMOA1
  */
-public class guardarUsuario extends HttpServlet {
+public class ValidarUsuario extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,63 +35,33 @@ public class guardarUsuario extends HttpServlet {
             throws ServletException, IOException, ClassNotFoundException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            int id_country;
-            String nom_user, pass_user, email;
-            int ID=0;
-            id_country = Integer.parseInt(request.getParameter("p"));
-            nom_user = request.getParameter("nombre");
-            pass_user = request.getParameter("contra");
+            /* TODO output your page here. You may use following sample code. */   
+            String email, pass;
+            
             email = request.getParameter("correo");
-
-//            boolean validarComillas = Validacion.comilla(id_country + nom_user + pass_user + email);
-////         boolean validarEdad = Validacion.numero(id_country);
-//            boolean validarTexto = Validacion.texto(nom_user + pass_user + email);
-//            boolean validarCorreo = Validacion.correo(email);
-////         boolean validarEdad2 = Validacion.edad(edad);
-//            if (validarComillas == false && validarTexto == false && validarCorreo == true) {
-                Usuario e = new Usuario();
-                e.setId_country(id_country);
-                e.setNom_user(nom_user);
-                e.setPass_user(pass_user);
-                e.setEmail(email);
-
-                int estatus = AccionesUsuario.registrarUsuario(e);
-
-                if (estatus > 0) {
-               ID= AccionesUsuario.obtenerId(e.getEmail());
-                    System.out.println(ID);
-            HttpSession idsesion = request.getSession(true);
+            pass = request.getParameter("contra");
+            Usuario u = new Usuario();
             
-           
-            idsesion.setAttribute("id",ID);
-            idsesion.setAttribute("usuario", e.getNom_user());
-       
+            u = u.verificarUsuario(email, pass);
             
-            
-            System.out.println("Sesion: "+ idsesion);
-            
-            Enumeration nombreParametros = idsesion.getAttributeNames();
+            if(u!=null){
+                /*
+                que el usuario si existe en la bd
+                creamos la sesion de ese usuario
+                */
+                HttpSession sesionuok = request.getSession(true);
+                sesionuok.setAttribute("usuario", u);
                 
-            while(nombreParametros.hasMoreElements()){
-                String parametro = (String)nombreParametros.nextElement();
-                Object valor = idsesion.getAttribute(parametro);
-                System.out.println("Atributos de la sesion: " + parametro 
-                        + " Valor: " + valor.toString());
+                HttpSession sesionusu = request.getSession();
+                //va a recoger el usuario con que se ingreso
+                sesionusu.setAttribute("id", u.getId_user());
+                sesionusu.setAttribute("usuario", u.getNom_user());
+                response.sendRedirect("index-usuario.jsp");
+            }else{
+                //el usuario no existe o la clave es incorrecta
+                response.sendRedirect("error.jsp");
             }
             
-            
-          
-                    
-                    
-                    response.sendRedirect("index-usuario.jsp");
-                } else {
-                    response.sendRedirect("errorUsu.jsp");
-                }
-
-//            }else {
-//                response.sendRedirect("error.jsp");
-//
             
         }
     }
@@ -114,7 +81,7 @@ public class guardarUsuario extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(guardarUsuario.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ValidarUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -132,7 +99,7 @@ public class guardarUsuario extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(guardarUsuario.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ValidarUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

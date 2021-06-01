@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Miguel y luis son putas</h1>
+        <h1>Miguel y luis son Putas</h1>
     </body>
 </html>

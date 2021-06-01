@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     String usuario = "";
-    int idusuario ;
+    
     HttpSession sesionusu = request.getSession();
     if(sesionusu.getAttribute("usuario")==null){
     %>
@@ -19,6 +19,8 @@
     <%
     }else{
         usuario = (String)sesionusu.getAttribute("usuario");
+        
+        
     }
     %>
 <!DOCTYPE html>
