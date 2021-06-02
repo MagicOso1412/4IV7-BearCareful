@@ -49,7 +49,7 @@
                 <a class= "boton-secundario" href="predicciones.html">Estadísticas</a>
             </div>
             <div class="navegacionDerecha">
-                <a class= "boton-secundario" href="historico.html">Histórico</a>
+                <a class= "boton-secundario" href="historico-usuario.jsp">Histórico</a>
             </div>
             <div class="navegacionDerecha">
                 <a class= "boton-secundario" href="perfil.html">Perfil</a>
@@ -85,9 +85,9 @@
         <br>
         <a href="perfil.html" class="a-nav">Perfil</a>
         <br>
-        <a href="historico.html" class="a-nav">Histórico</a>
+        <a href="historico-usuario.jsp" class="a-nav">Histórico</a>
         <br>
-        <a href="predicciones.html" class="a-nav" >Estadísticas</a>
+        <a href="estadistica-usuario.jsp" class="a-nav" >Estadísticas</a>
         <br>
     </div>
 <!-- Aqui termina barra de navegacion -->

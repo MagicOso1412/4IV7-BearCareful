@@ -956,6 +956,7 @@
                 <div class="contenedorPregunta-1">
                     <div class="textoTest">
                         <h2>¿Ya terminaste? <% out.println(usuario); %></h2>
+                        <input type="hidden" name="idses" value=<% out.println(idusuario);%>>
                         <br>
                         <p>
                             <!-- * Leer el comentario en el js * -->

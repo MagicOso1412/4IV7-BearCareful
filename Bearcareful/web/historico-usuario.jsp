@@ -1,10 +1,24 @@
-<%-- 
-    Document   : historico-usuario
-    Created on : 24/05/2021, 09:30:14 PM
-    Author     : Oso
---%>
-
+<%@page import="Modelo.Test"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    String usuario = "";
+    int idusuario =0;
+    HttpSession sesionusu = request.getSession();
+    if(sesionusu.getAttribute("usuario")==null){
+    %>
+
+    <jsp:forward page="index.html">
+        <jsp:param name="Error" value="Es obligatorio identificarse" />
+    </jsp:forward>
+
+    <%
+    }else{
+        usuario = (String)sesionusu.getAttribute("usuario");
+        idusuario=(Integer)sesionusu.getAttribute("id");
+    }
+    %>
+<%@page import="Control.AccionesTest"%>
+<%@page import="java.util.List"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,7 +93,45 @@
 
     <div class="contenido" name="historico">
         <h3>Historico</h3>
-        <img class="grafica" src="assets/images/historico.svg">
+        
+        
+        <table>
+            <table >
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Puntaje</th>
+                    <th>Escala</th>
+                   
+                   
+                </tr>
+               
+            </thead>
+            <tbody>
+           <% 
+                List<Test> lista = AccionesTest.buscarAllTestByID(idusuario);
+                
+                for(Test e : lista){
+
+                    %>
+                    <tr>
+                        <td> <%=e.getDate()%> </td>
+                        <td> <%=e.getScore_test()%> </td>
+                        <td> <%=AccionesTest.AsignarEscalaById(e.getId_escala())%></td>
+                        
+                        
+                    </tr>
+                    <%
+
+                }
+
+                %>
+                
+                
+            </tbody>
+        </table>
+        
+        
     </div>
     
 </body>

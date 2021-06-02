@@ -5,7 +5,9 @@
  */
 package Modelo;
 
-import java.sql.Date;
+import java.util.Date;
+
+
 
 /**
  *
@@ -14,7 +16,8 @@ import java.sql.Date;
 public class Test {
         private int id_test, id_user, score_test, id_escala;
         private String Scale_depre;
-        private String date_test;
+        private String Date; 
+       
     /**
      * @return the id_test
      */
@@ -71,20 +74,8 @@ public class Test {
         this.Scale_depre = Scale_depre;
     }
 
-    /**
-     * @return the date_test
-     */
-    public String getDate_test() {
-        return date_test;
-    }
-
-    /**
-     * @param date_test the date_test to set
-     */
-    public void setDate_test(String date_test) {
-        this.date_test = date_test;
-    }
-    
+   
+  
 
     public int getId_escala() {
         return id_escala;
@@ -92,6 +83,21 @@ public class Test {
 
     public void setId_escala(int id_escala) {
         this.id_escala = id_escala;
+    }
+
+    /**
+     * @return the Date
+     */
+    public String getDate() {
+        
+        return Date;
+    }
+
+    /**
+     * @param Date the Date to set
+     */
+    public void setDate(String Date) {
+        this.Date = Date;
     }
     
     

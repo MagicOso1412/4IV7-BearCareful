@@ -29,6 +29,12 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
 body{
     font-family: 'Manrope', sans-serif;
 }
+table{
+    margin:auto;
+}
+td{
+    border: solid .2rem black;
+}
 a{
     text-decoration: none;
     color: black;
