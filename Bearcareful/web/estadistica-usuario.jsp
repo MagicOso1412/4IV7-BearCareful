@@ -37,40 +37,40 @@
     <nav class="normal">
         <div class="izquierda">
             <div class="navegacionIzquierda">
-                <a href="index.html">
+                <a href="index-usuario.jsp">
                     <h1>Bear Careful</h1>
                 </a>
             </div>
             <div class="navegacionIzquierda">
-                <a href="index.html">
+                <a href="index-usuario.jsp">
                     <img src="assets/images/icon.png" width="100rem" height="100rem">
                 </a>
             </div>
         </div>
         <div class="derecha">
             <div class="navegacionDerecha">
-                <a class= "boton-secundario" href="predicciones.html">Estadísticas</a>
+                <a class= "boton-secundario" href="estadistica-usuario.jsp">Estadísticas</a>
             </div>
             <div class="navegacionDerecha">
-                <a class= "boton-secundario" href="historico.html">Histórico</a>
+                <a class= "boton-secundario" href="historico-usuario.jsp">Histórico</a>
             </div>
             <div class="navegacionDerecha">
-                <a class= "boton-secundario" href="perfil.html">Perfil</a>
+                <a class= "boton-secundario" href="perfil-usuario.jsp">Perfil</a>
             </div>
             <div class="navegacionDerecha">
-                <a class= "boton-principal" href="realizarTest.html">Realizar Test</a>
+                <a class= "boton-principal" href="realizarTest.jsp">Realizar Test</a>
             </div>
         </div>
     </nav>
     <nav class="responsive">
         <div class="izquierda">
             <div class="navegacionIzquierda">
-                <a href="index.html">
+                <a href="index-usuario.jsp">
                     <h1>&nbspBear Careful</h1>
                 </a>
             </div>
             <div class="navegacionIzquierda">
-                <a href="index.html">
+                <a href="index-usuario.jsp">
                     <img src="assets/images/icon.png" width="100rem" height="100rem">
                 </a>
             </div>
@@ -84,13 +84,13 @@
     <input id="menu" type="checkbox">
     <div class="desplegable">
         <br>
-        <a href="realizarTest.html" class="a-nav">Realizar Test</a>
+        <a href="realizarTest.jsp" class="a-nav">Realizar Test</a>
         <br>
-        <a href="perfil.html" class="a-nav">Perfil</a>
+        <a href="perfil-usuario.jsp" class="a-nav">Perfil</a>
         <br>
-        <a href="historico.html" class="a-nav">Histórico</a>
+        <a href="historico-usuario.jsp" class="a-nav">Histórico</a>
         <br>
-        <a href="predicciones.html" class="a-nav" >Estadísticas</a>
+        <a href="estadistica-usuario.jsp" class="a-nav" >Estadísticas</a>
         <br>
     </div>
 <!-- Aqui termina barra de navegacion -->

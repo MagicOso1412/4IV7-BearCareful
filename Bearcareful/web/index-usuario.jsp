@@ -34,25 +34,25 @@
     <nav class="normal">
         <div class="izquierda">
             <div class="navegacionIzquierda">
-                <a href="index.html">
+                <a href="index-usuario.jsp">
                     <h1>Bear Careful</h1>
                 </a>
             </div>
             <div class="navegacionIzquierda">
-                <a href="index.html">
+                <a href="index-usuario.jsp">
                     <img src="assets/images/icon.png" width="100rem" height="100rem">
                 </a>
             </div>
         </div>
         <div class="derecha">
             <div class="navegacionDerecha">
-                <a class= "boton-secundario" href="predicciones.html">Estadísticas</a>
+                <a class= "boton-secundario" href="estadistica-usuario.jsp">Estadísticas</a>
             </div>
             <div class="navegacionDerecha">
                 <a class= "boton-secundario" href="historico-usuario.jsp">Histórico</a>
             </div>
             <div class="navegacionDerecha">
-                <a class= "boton-secundario" href="perfil.html">Perfil</a>
+                <a class= "boton-secundario" href="perfil-usuario.jsp">Perfil</a>
             </div>
             <div class="navegacionDerecha">
                 <a class= "boton-principal" href="realizarTest.jsp">Realizar Test</a>
@@ -62,12 +62,12 @@
     <nav class="responsive">
         <div class="izquierda">
             <div class="navegacionIzquierda">
-                <a href="index.html">
+                <a href="index-usuario.jsp">
                     <h1>&nbspBear Careful</h1>
                 </a>
             </div>
             <div class="navegacionIzquierda">
-                <a href="index.html">
+                <a href="index-usuario.jsp">
                     <img src="assets/images/icon.png" width="100rem" height="100rem">
                 </a>
             </div>
@@ -83,7 +83,7 @@
         <br>
         <a href="realizarTest.jsp" class="a-nav">Realizar Test</a>
         <br>
-        <a href="perfil.html" class="a-nav">Perfil</a>
+        <a href="perfil-usuario.jsp" class="a-nav">Perfil</a>
         <br>
         <a href="historico-usuario.jsp" class="a-nav">Histórico</a>
         <br>
@@ -109,7 +109,7 @@
         </p>
     </div>
     <div class="contenido">
-        <p><a href="predicciones.html" class="boton-principal">Consultar Estadísticas</a></p>
+        <p><a href="estadistica-usuario.jsp" class="boton-principal">Consultar Estadísticas</a></p>
         <br>
         <p><a href="realizarTest.jsp" class="boton-principal">Realizar Test</a></p>
         <img class="imagen" src="assets/images/icon.png">
@@ -119,7 +119,7 @@
 <footer>
     <p><a href="index.html">Bear Tual</a></p>
     <p><a class="equipo" href="Equipo.html">Equipo</a></p>
-    <p><a href="CerrarSesion.">Cerrar Sesion</a></p>
+    <p><a href="CerrarSesion">Cerrar Sesion</a></p>
     <p> © Derechos reservados</p>
 </footer>
 </html>

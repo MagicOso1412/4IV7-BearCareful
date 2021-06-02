@@ -13,6 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -35,9 +36,20 @@ public class actualizarUsuario extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
           
+            String usuario = "";
+             int idusuario=1 ;
+        HttpSession sesionusu = request.getSession();
+        if(sesionusu.getAttribute("usuario")==null){
+            response.sendRedirect("error.jsp");
+            }else{
+            usuario = (String)sesionusu.getAttribute("usuario");
+            idusuario=(Integer)sesionusu.getAttribute("id");
+             }
+    
+            
             int id_country;
         String nom_user, pass_user, email ;
-           int id = Integer.parseInt(request.getParameter("id2"));
+           int id = idusuario;
            
            id_country  = Integer.parseInt(request.getParameter("pais2"));
          nom_user  = request.getParameter("nombre2");
@@ -55,7 +67,7 @@ public class actualizarUsuario extends HttpServlet {
          int estatus = AccionesUsuario.actualizarUsuario(U);
             
             if(estatus > 0){
-                response.sendRedirect("Perfil.jsp");
+                response.sendRedirect("perfil-usuario.jsp");
             }else{
                 response.sendRedirect("error.jsp");
             }

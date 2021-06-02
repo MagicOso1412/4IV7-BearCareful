@@ -46,7 +46,7 @@ public class AccionesUsuario {
         int estatus = 0;
         try {
             Connection con = Conexion.getConnection();
-            String q = "update MUsuario set id_pais = ?, nom_usu = ?,con_usur = ?, cor_usu = ? where id_usu = ?";
+            String q = "update MUsuario set id_pais = ?, nom_usu = ?,con_usu = ?, cor_usu = ? where id_usu = ?";
 
             PreparedStatement ps = con.prepareStatement(q);
 
