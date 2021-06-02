@@ -44,6 +44,15 @@ a{
     width: 50%;
 }
 
+/* Tablas */
+
+table{
+    margin:auto;
+}
+td{
+    border: solid .2rem black;
+}
+
 /* Navegacion */
 .izquierda, .derecha, .formulario, nav{
     display: -webkit-flex;
