@@ -96,7 +96,7 @@ public class guardarTest extends HttpServlet {
             int estatus = AccionesTest.registrarTest(t);
 
             if (estatus > 0) {
-                response.sendRedirect("index.html");
+                response.sendRedirect("historico-usuario.jsp");
             } else {
                 response.sendRedirect("error.jsp");
             }

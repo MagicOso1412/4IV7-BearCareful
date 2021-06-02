@@ -81,7 +81,7 @@
     <input id="menu" type="checkbox">
     <div class="desplegable">
         <br>
-        <a href="realizarTest.html" class="a-nav">Realizar Test</a>
+        <a href="realizarTest.jsp" class="a-nav">Realizar Test</a>
         <br>
         <a href="perfil.html" class="a-nav">Perfil</a>
         <br>
